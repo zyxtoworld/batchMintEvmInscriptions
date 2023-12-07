@@ -1,0 +1,14 @@
+{
+  "name": "evm_mint",
+  "version": "1.0.0",
+  "main": "mint.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "bip39": "^3.1.0",
+    "dotenv": "^16.3.1",
+    "ethereum-hdwallet": "^0.1.2",
+    "fs": "^0.0.1-security",
+    "web3": "^4.3.0"
+  }
+}
