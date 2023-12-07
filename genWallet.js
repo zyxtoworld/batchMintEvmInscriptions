@@ -6,11 +6,6 @@ const HDWallet = require('ethereum-hdwallet');
 const mnemonic = process.env.MNEMONIC;
 // 需要生成的地址数
 const genNum = process.env.GEN_NUM;
-// 生成英文助记词
-// const mnemonic = bip39.generateMnemonic()
-// 生成中文助记词
-// const mnemonic = bip39.generateMnemonic(128, null, bip39.wordlists.chinese_simplified);
-console.log('助记词：' + mnemonic);
  
 async function getAddress(mnemonic) {
  

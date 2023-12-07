@@ -1,10 +1,6 @@
 require('dotenv').config();
 const fs = require('fs');
 const bip39 = require('bip39')
-// 获取助记词
-const mnemonic = process.env.MNEMONIC;
-// 需要生成的地址数
-const genNum = process.env.GEN_NUM;
 // 生成英文助记词
 const mnemonicEn = bip39.generateMnemonic()
 // 生成中文助记词

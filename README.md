@@ -25,12 +25,12 @@ node genMnemonic.js
 
 ## 根据助记词批量打印地址
 ```
-node printAllAddressByMnemonic.js
+node printAddressByMnemonic.js
 ```
 
 ## 根据助记词批量打印私钥
 ```
-node printAllPrivateKeyByMnemonic.js
+node printPrivateKeyByMnemonic.js
 ```
 
 ## 钱包批量生成
