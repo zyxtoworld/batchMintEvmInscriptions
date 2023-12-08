@@ -52,3 +52,13 @@ node transfer.js
 ```
 node mint.js
 ```
+
+## 快速批量mint
+未经实际测试，不建议轻易使用，容易快速烧gas且不保证mint成功。
+
+不等待交易结果，不每次请求gas，累积nonce直接发送mint请求，由于请求太快容易被节点阻止导致脚本停止运行，建议自建全节点用此脚本。
+
+用 evm_wallets.json 里的所有地址来mint，可按格式自行添加和修改，文件里的 address 和 privateKey 必须配置正确
+```
+node fastMint.js
+```
