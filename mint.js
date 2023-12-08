@@ -12,6 +12,8 @@ const hexStr = '0x' + utf8Bytes.toString('hex');
 
 // 每次交易都获取实时gas和nonce
 async function performTransaction(walletInfo, numberOfTimes) {
+    let successNum = 0;
+    let failNum = 0;
     for (let i = 0; i < numberOfTimes; i++) {
         try {
             const nonce = await web3.eth.getTransactionCount(walletInfo.address);
@@ -33,10 +35,11 @@ async function performTransaction(walletInfo, numberOfTimes) {
 
             const signedTransaction = await web3.eth.accounts.signTransaction(transaction, walletInfo.privateKey);
             const result = await web3.eth.sendSignedTransaction(signedTransaction.rawTransaction);
-
-            console.log(`第 ${walletInfo.num} 个地址 ${walletInfo.address} 第 ${i + 1} 次操作成功，交易哈希: ${result.transactionHash}`);
+            successNum = successNum + 1;
+            console.log(`本次脚本运行第 ${walletInfo.num} 个地址 ${walletInfo.address} 第 ${i + 1} 次操作成功，共成功 ${successNum} 次，共失败 ${failNum} 次，交易哈希: ${result.transactionHash}`);
         } catch (error) {
-            console.error(`第 ${walletInfo.num} 个地址 ${walletInfo.address} 第 ${i + 1} 次操作失败: `, error);
+            failNum = failNum + 1;
+            console.error(`本次脚本运行第 ${walletInfo.num} 个地址 ${walletInfo.address} 第 ${i + 1} 次操作失败，共成功 ${successNum} 次，共失败 ${failNum} 次: `, error);
         }
     }
 }
