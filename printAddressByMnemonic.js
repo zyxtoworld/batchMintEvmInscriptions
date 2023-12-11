@@ -6,7 +6,7 @@ const mnemonic = process.env.MNEMONIC;
 // 需要生成的地址数
 const genNum = process.env.GEN_NUM;
 
-async function getAddress(mnemonic) {
+async function getAddresses(mnemonic) {
 	const seed = await bip39.mnemonicToSeed(mnemonic); //生成种子
 	const hdwallet = HDWallet.fromSeed(seed);
 	for (var i = 0; i < genNum; i++) { // 用同一个种子生成多个地址
@@ -16,4 +16,4 @@ async function getAddress(mnemonic) {
 	}
 }
 
-getAddress(mnemonic); //执行函数
+getAddresses(mnemonic); //执行函数
