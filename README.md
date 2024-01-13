@@ -64,3 +64,12 @@ node mint.js
 ```
 node fastMint.js
 ```
+
+## 批量归集
+归集 evm_wallets.json 文件里的所有地址的 gas 币
+
+转给 .env 文件里 ADDRESS 填写的地址
+
+```
+node transferGasToOne.js
+```
