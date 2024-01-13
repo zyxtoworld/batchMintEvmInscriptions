@@ -55,7 +55,6 @@ const batchSendTransactions = async () => {
     const transactionPromises = wallets.map(async (wallet) => {
         try {
             const transaction = await buildTransaction(wallet);
-            console.log(transaction)
             const receipt = await sendTransaction(transaction, wallet);
             console.log(`第 ${wallet.num} 个地址 ${wallet.address} 转账至 ${toAddress} 成功。交易哈希: ${receipt.transactionHash}`);
         } catch (error) {
